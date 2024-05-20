@@ -15,7 +15,7 @@ data_collect () {
   python -u data_collect.py --config-name data_collect carla_sh_path=${CARLA_PATH} dataset_root=${DATASET_ROOT} port=${PORT} test_suites=${TEST_SUITE}
 }
 
-source ~/miniconda3/etc/profile.d/conda.sh
+source /home/wcj/anaconda3/etc/profile.d/conda.sh
 conda activate mile
 
 # Remove checkpoint files
