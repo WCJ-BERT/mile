@@ -134,7 +134,7 @@ class CarlaDataset(Dataset):
 
         return batch
 
-    def load_single_element_time_t(self, run_id, t):
+    def load_single_element_time_t(self, run_id, t): ###注意此处 进行了单步输入数据整合
         data_row = self.data[run_id].iloc[t]
         single_element_t = {}
 

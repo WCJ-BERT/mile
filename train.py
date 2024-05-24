@@ -28,7 +28,7 @@ def main():
     cfg = get_cfg(args)
 
     data = DataModule(cfg)
-    model = WorldModelTrainer(cfg.convert_to_dict())
+    model = WorldModelTrainer(cfg.convert_to_dict())  ###定义一个模型类
 
     save_dir = os.path.join(
         cfg.LOG_DIR, time.strftime('%d%B%Yat%H:%M:%S%Z') + '_' + socket.gethostname() + '_' + cfg.TAG
@@ -36,15 +36,15 @@ def main():
     logger = pl.loggers.TensorBoardLogger(save_dir=save_dir)
 
     callbacks = [
-        pl.callbacks.ModelSummary(-1),
-        SaveGitDiffHashCallback(),
-        pl.callbacks.LearningRateMonitor(),
+        pl.callbacks.ModelSummary(-1), ##总结模型
+        SaveGitDiffHashCallback(), ##git对齐
+        pl.callbacks.LearningRateMonitor(),##学习率监控
         ModelCheckpoint(
             save_dir, every_n_train_steps=cfg.VAL_CHECK_INTERVAL,
-        ),
-    ]
+        ),##指定间隔 存模型ckpt
+    ] ##四个回调
 
-    if cfg.LIMIT_VAL_BATCHES in [0, 1]:
+    if cfg.LIMIT_VAL_BATCHES in [0, 1]: ##batches 检查是否为 0 或 1
         limit_val_batches = float(cfg.LIMIT_VAL_BATCHES)
     else:
         limit_val_batches = cfg.LIMIT_VAL_BATCHES
