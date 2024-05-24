@@ -1,3 +1,13 @@
+##Mile 初始化了一个 神经网络模型
+
+
+###Mile 类通过以下步骤处理BEV数据：
+
+# 使用预训练的ResNet18模型提取图像特征。
+# 使用特征解码器解码特征。
+# 使用视锥池化模块将特征转换为BEV。 imagine过程
+# 使用深度解码器解码深度信息，并应用于BEV。
+
 import torch
 import torch.nn as nn
 import timm

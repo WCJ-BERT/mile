@@ -21,7 +21,7 @@ ROUTE_COMMANDS = {0: 'UNKNOWN',
                   6: 'CHANGELANERIGHT',
                   }
 
-BIRDVIEW_COLOURS = np.array([[255, 255, 255],          # Background
+BIRDVIEW_COLOURS = np.array([[0, 0, 0],          # Background
                              [225, 225, 225],       # Road
                              [160, 160, 160],      # Lane marking
                              [0, 83, 138],        # Vehicle
