@@ -178,8 +178,10 @@ def main(cfg: DictConfig):
 
     # main loop
     n_episodes_per_env = math.ceil(cfg.n_episodes/len(cfg.test_suites))
+    print("n_episodes_per_env = ",n_episodes_per_env)
 
     for task_idx in range(ckpt_task_idx, n_episodes_per_env):
+        print("task_idx = ", task_idx)
         idx_episode = task_idx + n_episodes_per_env * env_idx
         run_name = f'{idx_episode:04}'
 
@@ -207,6 +209,7 @@ def main(cfg: DictConfig):
                 cfg.log_video,
                 cfg.remove_final_steps)
 
+            print("valid state:",valid)
             if valid:
                 break
 
