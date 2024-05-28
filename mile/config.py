@@ -220,7 +220,7 @@ _C.SAMPLER.COMMAND_WEIGHTS = [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
 
 def get_parser():
     parser = argparse.ArgumentParser(description='World model training')
-    parser.add_argument('--config-file', default='', metavar='FILE', help='path to config file')
+    parser.add_argument('--config', default='', metavar='FILE', help='path to config file')
     parser.add_argument(
         'opts', help='Modify config options using the command-line', default=None, nargs=argparse.REMAINDER,
     )
@@ -260,8 +260,8 @@ def get_cfg(args=None, cfg_dict=None):
         if args.config:
             cfg.merge_from_file(args.config)
 
-        if args.config1:
-            cfg.merge_from_file(args.config1)
+        # if args.config1:
+        #     cfg.merge_from_file(args.config1)
 
         if args.opts:
             cfg.merge_from_list(args.opts)

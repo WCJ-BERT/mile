@@ -4,7 +4,7 @@ bash run/data_collect.sh /home/wcj/Program_files/CARLA_0.9.11/CarlaUE4.sh /home/
 
 bash run/data_collect.sh /home/wcj/Program_files/CARLA_0.9.11/CarlaUE4.sh /home/new_drive/mile_datasave/ 2000 lb_test.yaml
 
-bash run/data_collect.sh /home/wcj/Program_files/CARLA_0.9.11/CarlaUE4.sh dataset/ 2000 lb_test.yaml
+bash run/data_collect.sh /home/wcj/Program_files/CARLA_0.9.11/CarlaUE4.sh dataset/ 2000 lb_town01.yaml
 
-
+注意：在训练时，要把Carla中的PythonAPI/agents复制到项目根目录下，否则会报错
 
